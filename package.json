@@ -1,0 +1,28 @@
+{
+  "name": "bank-csv-shepherd",
+  "type": "module",
+  "version": "0.1.0",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "dev": "bun --hot src/index.ts",
+    "build": "pkgroll --tsconfig tsconfig.build.json",
+    "test": "bun test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "pkgroll": "latest",
+    "prettier": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
