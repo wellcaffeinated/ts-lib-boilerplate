@@ -1,15 +1,26 @@
-# bank-csv-shepherd
+# ts-lib-boilerplate
 
-To install dependencies:
+TypeScript library boilerplate using Bun + pkgroll.
+
+## Setup
 
 ```bash
 bun install
 ```
 
-To run:
+## Scripts
 
-```bash
-bun run index.ts
+| Command | Description |
+|---|---|
+| `bun run dev` | Run with hot reload |
+| `bun run build` | Bundle to `dist/` via pkgroll |
+| `bun test` | Run tests |
+| `bun run format` | Format with Prettier |
+| `bun run format:check` | Check formatting (CI) |
+
+## Structure
+
 ```
-
-This project was created using `bun init` in bun v1.3.4. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+src/        source files
+dist/       build output (gitignored)
+```

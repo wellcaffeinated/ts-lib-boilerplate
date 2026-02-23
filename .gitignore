@@ -32,3 +32,20 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# Environment artifacts (sandbox/container bind-mounts)
+HEAD
+objects
+refs
+hooks
+config
+.gitconfig
+.gitmodules
+.bashrc
+.bash_profile
+.zshrc
+.zprofile
+.profile
+.ripgreprc
+.mcp.json
+.vscode

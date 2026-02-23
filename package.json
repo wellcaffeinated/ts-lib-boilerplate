@@ -1,5 +1,5 @@
 {
-  "name": "bank-csv-shepherd",
+  "name": "ts-lib-boilerplate",
   "type": "module",
   "version": "0.1.0",
   "exports": {
