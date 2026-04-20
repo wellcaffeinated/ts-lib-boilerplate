@@ -1,28 +1,47 @@
 {
   "name": "ts-lib-boilerplate",
-  "type": "module",
   "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
     }
   },
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "bun --hot src/index.ts",
-    "build": "pkgroll --tsconfig tsconfig.build.json",
-    "test": "bun test",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "format": "biome format . --write",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "knip": "knip",
+    "docs": "typedoc"
   },
   "devDependencies": {
-    "@types/bun": "latest",
-    "pkgroll": "latest",
-    "prettier": "latest"
+    "@biomejs/biome": "^2.4.12",
+    "knip": "^6.5.0",
+    "tsdown": "^0.21.9",
+    "typedoc": "^0.28.19",
+    "typedoc-plugin-markdown": "^4.11.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.4"
   },
   "peerDependencies": {
-    "typescript": "^5"
-  }
+    "typescript": "^5 || ^6"
+  },
+  "packageManager": "pnpm@10.33.0+sha512.10568bb4a6afb58c9eb3630da90cc9516417abebd3fabbe6739f0ae795728da1491e9db5a544c76ad8eb7570f5c4bb3d6c637b2cb41bfdcdb47fa823c8649319"
 }
